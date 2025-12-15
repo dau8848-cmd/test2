@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Passeriformes4</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            background: url('./image/C_back4.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* ===========================
+           ⭐ 每一組（wrapper）樣式
+        ============================ */
+        .wrapper {
+            max-width: 1200px;
+            margin: 60px auto;
+            display: flex;
+            gap: 32px;
+            padding: 0 16px;
+            border-bottom: 10px solid rgba(255, 255, 255, 0.3); /* 分隔線 */
+            padding-bottom: 40px;
+        }
+
+        /* 最後一組不要分隔線 */
+        .wrapper:last-of-type {
+            border-bottom: none;
+        }
+
+        .left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .image-box {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+            transition: transform 0.3s ease;
+        }
+
+        .image-box:hover {
+            transform: scale(1.1);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .audio-box {
+            padding: 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: #161328;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        .right {
+            flex: 1;
+            padding: 24px;
+            font-size: 20px;
+            line-height: 1.7;
+            color: #202102;
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+        }
+
+        /* ===========================
+           ⭐ Scroll Reveal 動畫樣式
+        ============================ */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="wrapper reveal">
+        <div class="left">
+            <div class="image-box">
+                <img src="./image/C6.png">
+            </div>
+
+            <div class="audio-box">
+                <div class="audio-label">綠繡眼叫聲</div>
+                <audio controls>
+                    <source src="./mp3/C6.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>綠繡眼
+</h2>
+            <p>綠繡眼（學名：Zosterops japonicus），是台灣廣為人知、分布極廣的常見小型留鳥。由於牠們身形嬌小、羽色鮮麗，又常成群活動，被許多人暱稱為「青翠的小精靈」。牠們最具代表性的外觀特色，就是眼睛周圍那一圈如白色眼鏡般的羽毛，因此得名「繡眼」。綠繡眼全身以橄欖綠色為主，腹部則呈現偏白或淡黃色，整體給人清新活潑的印象。
+
+綠繡眼常棲息於森林、都市公園、校園綠地、果樹園甚至住家庭院，非常適應都市化環境。牠們的行動敏捷，常以成對或小群方式在樹冠間跳躍、覓食。主要食物包括昆蟲、花蜜與各類果實，其中最為人熟知的是牠們喜歡吸食櫻花與木棉花的花蜜，因此在花季時特別容易觀察到綠繡眼的身影。
+
+這種鳥的鳴聲清脆、節奏歡快，常以一連串高音「啾啾啾」的聲調呈現，是許多人認為最具親和力的野鳥之一。繁殖季通常從春季開始，綠繡眼會以細枝、雜草和植物纖維築成杯狀巢，位置多在樹枝間，精巧細緻。
+
+由於綠繡眼不害羞、容易接近人類，也常出現在住家附近，因此在台灣的日常生活中非常常見，是新手觀鳥者最容易認識與觀察的物種之一。牠們活潑、愛叫、色彩亮眼，是象徵台灣自然生態活力的重要代表。</p>
+        </div>
+
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+
+            reveals.forEach(div => {
+                const top = div.getBoundingClientRect().top;
+
+                if (top < windowHeight - 100) {
+                    div.classList.add("visible");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        window.addEventListener("load", revealOnScroll);
+    </script>
+
+</body>
+</html>

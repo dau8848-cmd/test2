@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Passeriformes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            background: url('./image/C_back.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* ===========================
+           ⭐ 每一組（wrapper）樣式
+        ============================ */
+        .wrapper {
+            max-width: 1200px;
+            margin: 60px auto;
+            display: flex;
+            gap: 32px;
+            padding: 0 16px;
+            border-bottom: 10px solid rgba(255, 255, 255, 0.3); /* 分隔線 */
+            padding-bottom: 40px;
+        }
+
+        /* 最後一組不要分隔線 */
+        .wrapper:last-of-type {
+            border-bottom: none;
+        }
+
+        .left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .image-box {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+            transition: transform 0.3s ease;
+        }
+
+        .image-box:hover {
+            transform: scale(1.1);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .audio-box {
+            padding: 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: #161328;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        .right {
+            flex: 1;
+            padding: 24px;
+            font-size: 20px;
+            line-height: 1.7;
+            color: #1b2010;
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+        }
+
+        /* ===========================
+           ⭐ Scroll Reveal 動畫樣式
+        ============================ */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="wrapper reveal">
+        <div class="left">
+            <div class="image-box">
+                <img src="./image/C1.png">
+            </div>
+
+            <div class="audio-box">
+                <div class="audio-label">台灣黃山雀叫聲</div>
+                <audio controls>
+                    <source src="./mp3/C1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>台灣黃山雀
+</h2>
+            <p>黃山雀（Machlolophus holsti，舊名 Parus holsti）是台灣特有種的小型鳥類，也是台灣山區極具代表性的雀形目鳥種之一。牠們主要分布在中高海拔（約 1,500～3,000 公尺）的針葉林與闊葉林生態系中，特別常見於阿里山、合歡山、太平山及雪山山脈等地。
+
+黃山雀體型小巧，約 12 公分長。外觀上以醒目的黑、白、黃三色為主：頭頂為黑色，頭側與臉部有白色斑塊，胸口則呈明亮的黃色，腹部顏色較淡。背部和翅膀帶有藍灰色調，視覺對比鮮明。牠們的羽色雖不如台灣藍鵲或帝雉那般華麗，但因色彩清爽、辨識度高，深受賞鳥人士喜愛。
+
+黃山雀是典型的森林小型昆蟲食者，以昆蟲、蜘蛛等無脊椎動物為主食，尤其喜歡在樹幹與樹皮縫隙中覓食，也會捕食小型蛾類、甲蟲與其幼蟲。冬季或昆蟲量不足時，牠們也會補充種子、果實等植物性食物。牠們活動能力強、幾乎不停地在枝葉間跳動、倒掛，展現出高度靈活與適應力。
+
+繁殖季通常在每年春至初夏。牠們會利用樹洞、樹幹裂縫或舊啄木鳥巢作為巢址，築巢材料包括苔蘚、羽毛、乾草與毛皮等，每窩約產 5～7 枚卵。由雌鳥負責孵蛋，但雄鳥會協助守護巢區與餵食雌鳥。雛鳥孵出後，雙親共同育雛，數週即可離巢。</p>
+        </div>
+    </div>
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+
+            reveals.forEach(div => {
+                const top = div.getBoundingClientRect().top;
+
+                if (top < windowHeight - 100) {
+                    div.classList.add("visible");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        window.addEventListener("load", revealOnScroll);
+    </script>
+
+</body>
+</html>

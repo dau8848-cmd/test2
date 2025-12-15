@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Passeriformes3</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            background: url('./image/C_back3.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* ===========================
+           ⭐ 每一組（wrapper）樣式
+        ============================ */
+        .wrapper {
+            max-width: 1200px;
+            margin: 60px auto;
+            display: flex;
+            gap: 32px;
+            padding: 0 16px;
+            border-bottom: 10px solid rgba(255, 255, 255, 0.3); /* 分隔線 */
+            padding-bottom: 40px;
+        }
+
+        /* 最後一組不要分隔線 */
+        .wrapper:last-of-type {
+            border-bottom: none;
+        }
+
+        .left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .image-box {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+            transition: transform 0.3s ease;
+        }
+
+        .image-box:hover {
+            transform: scale(1.1);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .audio-box {
+            padding: 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: #161328;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        .right {
+            flex: 1;
+            padding: 24px;
+            font-size: 20px;
+            line-height: 1.7;
+            color: #1b2010;
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+        }
+
+        /* ===========================
+           ⭐ Scroll Reveal 動畫樣式
+        ============================ */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="wrapper reveal">
+        <div class="left">
+            <div class="image-box">
+                <img src="./image/C3.png">
+            </div>
+
+            <div class="audio-box">
+                <div class="audio-label">金翼白眉叫聲</div>
+                <audio controls>
+                    <source src="./mp3/C3.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>金翼白眉
+</h2>
+            <p>金翼白眉（Seicercus burkii insularis）是台灣特有亞種的小型鳥類，屬於畫眉科，廣泛分布於台灣中低至中海拔的闊葉林、竹林及次生林中。牠們體型小巧，體長約 12 公分，羽色以黃綠色為主，翼上有鮮明的黃色翅斑，頭部有明顯的白色眉紋，胸腹為淡黃色，整體顏色鮮明而活潑，十分容易辨識。
+
+金翼白眉主要以昆蟲及蜘蛛為食，偶爾也會吃果實。牠們活潑好動，經常在樹枝間跳躍覓食，尾巴微翹，動作敏捷。牠們的叫聲清脆悅耳，鳴唱聲短促而富節奏感，常作為山林的背景聲。
+
+繁殖季多在春至初夏，巢築於低矮樹叢或竹林中，由苔蘚、細根與羽毛組成，每窩產 3～5 枚卵。雙親共同育雛，雛鳥孵出後約兩週即可離巢，但仍受父母照料一段時間。
+
+金翼白眉對棲地改變敏感，森林破壞會影響其族群，但由於適應次生林能力強，目前族群仍相對穩定。牠們活潑的身影、鮮亮的羽色和悅耳的鳴唱，使其成為台灣山林中受人喜愛的小型特有鳥類。</p>
+        </div>
+
+    </div>
+       <div class="wrapper reveal">
+        <div class="left">
+            <div class="image-box">
+                <img src="./image/C4.png">
+            </div>
+
+            <div class="audio-box">
+                <div class="audio-label">紅頭穗鶥叫聲</div>
+                <audio controls>
+                    <source src="./mp3/C4.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>紅頭穗鶥
+</h2>
+            <p>紅頭穗鶥（Aegithalos concinnus holsti）是台灣特有亞種，屬於穗鶥科的小型鳥類，主要分布於中低至中海拔的山區林地，尤其偏好闊葉林、竹林以及次生林環境。牠們活潑敏捷，常成群活動，是台灣山林中常見的冬季混群鳥種之一。
+
+紅頭穗鶥體型小巧，約 12 公分長。其最顯著特徵是頭部呈鮮紅色，背部為灰色，翅膀帶有黑色斑紋，胸腹為灰白色，尾羽修長，飛行時尾巴上下晃動。雄雌鳥外觀相似，但雄鳥頭部紅色通常較鮮明。
+
+紅頭穗鶥以昆蟲為主食，尤其喜歡捕食小型節肢動物、蟲卵及蜘蛛，冬季或昆蟲量不足時，也會補充樹果與種子。牠們常在樹冠或灌木間快速跳躍覓食，行動靈活，警覺性高，遇到危險會發出尖銳叫聲，警告同伴。
+
+繁殖季多在春季。巢多築於樹枝分叉處或灌木叢中，由苔蘚、蜘蛛網、羽毛等柔軟材料建造，呈球狀或半球形。每窩約產 4～6 枚卵，由雙親共同孵育和育雛。雛鳥孵出後，由父母照料一段時間，學習覓食與飛行技能。
+
+紅頭穗鶥對棲地改變敏感，森林破壞會對族群造成壓力，但牠們能適應次生林及部分人為干擾區域，因此目前族群尚算穩定。鮮紅的頭部、活潑的身影及敏捷的覓食行為，使紅頭穗鶥成為台灣山林中極具辨識度、受人喜愛的小型特有鳥類。</p>
+        </div>
+    </div>
+       <div class="wrapper reveal">
+        <div class="left">
+            <div class="image-box">
+                <img src="./image/C5.png">
+            </div>
+
+            <div class="audio-box">
+                <div class="audio-label">褐頭花翼叫聲</div>
+                <audio controls>
+                    <source src="./mp3/C5.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>褐頭花翼
+</h2>
+            <p>褐頭花翼（Phylloscopus borealoides insularis，台灣特有亞種）是台灣常見的小型畫眉科鳥類，主要分布於中低至中海拔的闊葉林、竹林及次生林。牠們活潑好動，經常在樹冠或灌木間跳躍覓食，是山林中典型的昆蟲性小鳥，也常出現在混群中與其他林鳥一同覓食。
+
+褐頭花翼體型小巧，約 12 公分長。頭部呈褐色，背部為綠褐色，翼上帶有淡黃色斑紋，胸腹為灰白色，眼後略帶白色眉紋，整體色彩較低調，但辨識度仍高。雄雌外觀相似，羽色差異不大。
+
+牠們主要以昆蟲及其他小型節肢動物為食，包括蟲卵、蜘蛛、幼蟲等，有時也會補充果實或種子。覓食時牠們常沿著樹枝攀跳、倒掛或短暫停留，動作靈活且警覺性高。遇到天敵時會發出細小而尖銳的叫聲以示警告。
+
+繁殖季一般在春至初夏。巢多築於低矮樹叢或灌木間，由苔蘚、細草與羽毛編成杯狀巢，每窩產 4～6 枚卵。雌鳥負責孵蛋，雄鳥則協助守護巢區與提供食物。雛鳥孵出後由雙親共同餵養，數週即可離巢，但仍受父母照料一段時間。
+
+褐頭花翼對森林棲地依賴性較高，若原生林被破壞，會影響其族群，但由於牠們對次生林與灌木林也能適應，目前族群尚算穩定。牠們活潑的行動、靈巧的覓食方式以及低調卻典雅的羽色，使褐頭花翼成為台灣山林中不可忽視的小型特有鳥類。</p>
+        </div>
+    </div>
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+
+            reveals.forEach(div => {
+                const top = div.getBoundingClientRect().top;
+
+                if (top < windowHeight - 100) {
+                    div.classList.add("visible");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        window.addEventListener("load", revealOnScroll);
+    </script>
+
+</body>
+</html>

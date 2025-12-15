@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="Place3" content="width=device-width, initial-scale=1.0"/>
+  <title>Layout Demo</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      font-family: "Microsoft JhengHei", sans-serif;
+      background: #fff;
+    }
+
+    /* =========================
+       上方：滿版圖片區
+    ========================= */
+    .hero {
+      width: 100%;
+      height: 70vh;
+      background-image: url("./image/pic_10349_15.jpg"); /* 換成你的圖片 */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-title {
+      font-size: 56px;
+      font-weight: 900;
+      letter-spacing: 6px;
+      color: #ededed;
+      text-shadow:
+        2px 2px 0 rgba(255,255,255,0.15),
+        4px 4px 0 rgba(0,0,0,0.35);
+    }
+
+    /* =========================
+       白色文字區
+    ========================= */
+    .bottom {
+      width: 100%;
+      height: 30vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bottom-text {
+      font-size: 25px;
+      text-align: center;
+      max-width: 1000px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #393939;
+
+    }
+
+    /* =========================
+       中間分隔線
+    ========================= */
+    .section-divider {
+      width: 100%;
+      height: 4px;
+      background: #585656;
+      margin: 60px 0;
+    }
+
+    /* =========================
+       下方三個圖片區塊
+    ========================= */
+    .three-cards {
+      width: 100%;
+      padding: 40px 80px 80px;
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .card {
+      flex: 1;
+      text-align: center;
+    }
+
+    /* 圖片區（之後換成圖片） */
+    .card-img {
+      width: 100%;
+      height: 300px;
+    }
+
+    .card-text {
+      margin-top: 18px;
+      font-size: 28px;
+      font-weight: 900;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 上方圖片區 -->
+  <section class="hero">
+    <div class="hero-title">七股黑面琵鷺保護區</div>
+  </section>
+
+  <!-- 白色區 -->
+  <section class="bottom">
+    <div class="bottom-text">因黑面琵鷺而聲名大噪的七股溼地，入冬後都會成為愛鳥人士必訪之地，位於曾文溪出海口向北的海埔地，原本只是一般的溼地生態，因受黑面琵鷺的青睞，選在此地作為渡冬的棲息之所，成為鳥類保育人士的焦點。除了大批的黑面琵鷺之外，每年冬天到隔年春天還有海鷗、鷺科、鷸行鳥科等水鳥，以及蟹類、紅樹林等生態景觀。</div>
+  </section>
+
+  
+
+  <!-- 分隔線 -->
+  <div class="section-divider"></div>
+
+  <!-- 三個圖片區 -->
+  <section class="three-cards">
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('./image/pic_10349_9.jpg');"></div>
+    <div class="card-text">黑面琵鷺覓食
+</div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('./image/pic_10349_13.jpg');"></div>
+    <div class="card-text">黑面琵鷺保護區
+</div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('./image/pic_10349_8.jpg');"></div>
+    <div class="card-text">黑面琵鷺飛行
+</div>
+  </div>
+
+</section>
+
+</body>
+</html>

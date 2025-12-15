@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Corvidae</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            background: url('./image/D_back.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* ===========================
+           ⭐ 每一組（wrapper）樣式
+        ============================ */
+        .wrapper {
+            max-width: 1200px;
+            margin: 60px auto;
+            display: flex;
+            gap: 32px;
+            padding: 0 16px;
+            border-bottom: 10px solid rgba(255, 255, 255, 0.3); /* 分隔線 */
+            padding-bottom: 40px;
+        }
+
+        /* 最後一組不要分隔線 */
+        .wrapper:last-of-type {
+            border-bottom: none;
+        }
+
+        .left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .image-box {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+            transition: transform 0.3s ease;
+        }
+
+        .image-box:hover {
+            transform: scale(1.1);
+        }
+
+        .image-box img {
+            width: 150%;
+            height: 150%;
+            object-fit: contain;
+        }
+
+        .audio-box {
+            padding: 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: #161328;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        .right {
+            flex: 1;
+            padding: 24px;
+            font-size: 20px;
+            line-height: 1.7;
+            color: #161328;
+            transform: translateY(100px);
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+        }
+
+        /* ===========================
+           ⭐ Scroll Reveal 動畫樣式
+        ============================ */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="wrapper reveal">
+        <div class="left">
+            <div class="image-box">
+                <img src="./image/D1.png">
+            </div>
+
+            <div class="audio-box">
+                <div class="audio-label">灰面鵟鷹聲音</div>
+                <audio controls>
+                    <source src="./mp3/B1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>灰面鵟鷹</h2>
+            <p>灰面鵟鷹（中國大陸、香港作灰臉鵟鷹，學名：Butastur indicus），又稱灰面鷲，是鷹科鵟鷹屬的猛禽，臺灣彰化一帶稱為南路鷹，臺灣屏東滿州當地稱為山後鳥，而在臺灣屏東小琉球則叫做飛烏鳥。灰面鵟鷹於每年10月10日前後約5日，自北至南過冬，其中重要過境停棲點為臺灣的八卦臺地及恆春半島。因10月10日為中華民國國慶日，而又有國慶鳥之稱。臺灣彰化縣縣鳥。灰面鵟鷹 是一種亞洲的猛禽。牠的身長通常為41—46 cm（16—18英寸），屬於小型猛禽。牠在滿洲、南韓和日本繁殖；冬季遷徙到東南亞。這是一種生活在開闊地區的鳥類。牠以蜥蜴、小型哺乳動物和大型昆蟲為食。成鳥具有灰色的頭部、胸部和頸部，白色的喉部，黑色的鬍鬚和正中條紋，棕色的背部和上翼，以及棕色條紋的白色下部和下翼。幼鳥的上部為棕色並有斑點，下部為淺色並帶有棕色條紋，並且有一條寬廣的白色眉紋和棕色的臉部。</p>
+        </div>
+    </div>
+
+      <div class="wrapper reveal">
+        <div class="left">
+            <div class="image-box">
+                <img src="./image/D2.png">
+            </div>
+
+            <div class="audio-box">
+                <div class="audio-label">黑面琵鷺聲音</div>
+                <audio controls>
+                    <source src="./mp3/B1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>黑面琵鷺</h2>
+            <p>黑面琵鷺（學名：Platalea minor），又名黑臉琵鷺、小琵鷺、黑面鷺、黑琵鷺、琵琶嘴鷺，俗稱飯匙鳥 ，台語稱作「烏面抐桮台灣賞鳥人士則俗稱為「黑琵」因其扁平如湯匙狀的長嘴，與中國樂器中的琵琶極為相似，因而得名；亦因其姿態優雅，又有
+
+「黑面舞者」的雅稱；屬於鸛形目、䴉科、琵鷺亞科，琵鷺亞科的鳥類全世界共六種，其中以黑面琵鷺數量最為稀少（已知六種琵鷺當中唯黑面琵鷺屬瀕危物種），屬全球瀕危物種類別之一，因此當黑面琵鷺在每年一月至三月度冬時，東南亞觀鳥者會在多地觀測關注其過冬狀況並統計數量。黑面琵鷺現時只分布於東亞及東南亞地區。特徵
+    
+    </p>
+        </div>
+    </div>
+
+      <div class="wrapper reveal">
+        <div class="left">
+            <div class="image-box">
+                <img src="./image/D3.png">
+            </div>
+
+            <div class="audio-box">
+                <div class="audio-label">蒼鷺聲音</div>
+                <audio controls>
+                    <source src="./mp3/B1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>蒼鷺</h2>
+            <p>蒼鷺分布在非洲、歐亞大陸、中華人民共和國全境、朝鮮並日本至菲律賓及巽他群島。在西伯利亞、中國北方、日本北海道和韓國一些海外離島長年居住並繁殖後代。有些全年滯留於中亞、日本、朝鮮半島或中華民國臺灣北部，目前經由繫放得知的蒼鷺年齡是18.49年。</p>
+        </div>
+    </div>
+
+      <div class="wrapper reveal">
+        <div class="left">
+            <div class="image-box">
+                <img src="./image/D4.png">
+            </div>
+
+            <div class="audio-box">
+                <div class="audio-label">台灣藍鵲聲音</div>
+                <audio controls>
+                    <source src="./mp3/B1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>黃頭鷺</h2>
+            <p>灰面鵟鷹（中國大陸、香港作灰臉鵟鷹，學名：Butastur indicus），又稱灰面鷲，是鷹科鵟鷹屬的猛禽，臺灣彰化一帶稱為南路鷹，臺灣屏東滿州當地稱為山後鳥（臺灣話：suann-āu-tsiáu）[3]，而在臺灣屏東小琉球則叫做飛烏鳥（臺灣話：pue-oo-tsiáu）[4]。灰面鵟鷹於每年10月10日前後約5日，自北至南過冬，其中重要過境停棲點為臺灣的八卦臺地及恆春半島。因10月10日為中華民國國慶日，而又有國慶鳥之稱。臺灣彰化縣縣鳥。灰面鵟鷹 是一種亞洲的猛禽。牠的身長通常為41—46 cm（16—18英寸），屬於小型猛禽。牠在滿洲、南韓和日本繁殖；冬季遷徙到東南亞。這是一種生活在開闊地區的鳥類。牠以蜥蜴、小型哺乳動物和大型昆蟲為食。成鳥具有灰色的頭部、胸部和頸部，白色的喉部，黑色的鬍鬚和正中條紋，棕色的背部和上翼，以及棕色條紋的白色下部和下翼。幼鳥的上部為棕色並有斑點，下部為淺色並帶有棕色條紋，並且有一條寬廣的白色眉紋和棕色的臉部。</p>
+        </div>
+    </div>
+
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+
+            reveals.forEach(div => {
+                const top = div.getBoundingClientRect().top;
+
+                if (top < windowHeight - 100) {
+                    div.classList.add("visible");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        window.addEventListener("load", revealOnScroll);
+    </script>
+
+</body>
+</html>

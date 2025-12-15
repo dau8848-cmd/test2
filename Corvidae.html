@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Corvidae</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            background: url('./image/B_back.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* ===========================
+           ⭐ 每一組（wrapper）樣式
+        ============================ */
+        .wrapper {
+            max-width: 1200px;
+            margin: 60px auto;
+            display: flex;
+            gap: 32px;
+            padding: 0 16px;
+            border-bottom: 10px solid rgba(255, 255, 255, 0.3); /* 分隔線 */
+            padding-bottom: 40px;
+        }
+
+        /* 最後一組不要分隔線 */
+        .wrapper:last-of-type {
+            border-bottom: none;
+        }
+
+        .left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .image-box {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+            transition: transform 0.3s ease;
+        }
+
+        .image-box:hover {
+            transform: scale(1.1);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .audio-box {
+            padding: 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: #161328;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        .right {
+            flex: 1;
+            padding: 24px;
+            font-size: 20px;
+            line-height: 1.7;
+            color: #161328;
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+        }
+
+        /* ===========================
+           ⭐ Scroll Reveal 動畫樣式
+        ============================ */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="wrapper reveal">
+        <div class="left">
+            <div class="image-box">
+                <img src="./image/B1.png">
+            </div>
+
+            <div class="audio-box">
+                <div class="audio-label">台灣藍鵲聲音</div>
+                <audio controls>
+                    <source src="./mp3/B1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>台灣藍鵲</h2>
+            <p>台灣藍鵲（Urocissa caerulea）是台灣特有種鳥類，因其鮮豔亮眼的羽色與群體生活習性，被譽為「長尾山娘」或「福爾摩沙藍鵲」。牠們主要分布在台灣中低海拔的闊葉林地帶，尤其常見於北部山區，如陽明山、雪山山腳等地。近年因適應能力強，也常出現在郊區甚至靠近人類活動的農地與住家周邊，成為大家熟悉的野生鳥類之一。
+
+台灣藍鵲的外型極具特色。全身以亮藍色羽毛為主，頭部呈黑色，像戴著一頂黑色頭罩；嘴喙與腳為鮮紅色，對比鮮明。最引人注意的是牠們修長的尾羽，最長可達 40 公分以上，尾羽末端呈白色，飛行時格外醒目。雄雌鳥外觀相似，但雄鳥尾羽通常更長。
+
+台灣藍鵲為雜食性，食物種類相當廣泛，包括昆蟲、蚯蚓、蜥蜴等動物性食物，也會吃果實、穀物、種子，甚至偶爾偷吃其他鳥類的蛋。牠們的適應力高，懂得在垃圾堆覓食或利用人類提供的食物，因此逐漸向人類生活圈擴張。
+
+在社會行為方面，台灣藍鵲是高度群聚的鳥類，常以家族群的方式活動，約 3 至 10 隻共同覓食與移動。牠們的社會結構完整，具有合作育雛的行為：除了親鳥外，上一胎的幼鳥也會一起幫忙守衛巢區、餵雛與驅趕入侵者，這種「協助繁殖」在鳥類中相當罕見，也使台灣藍鵲的生態研究更具意義。</p>
+        </div>
+    </div>
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+
+            reveals.forEach(div => {
+                const top = div.getBoundingClientRect().top;
+
+                if (top < windowHeight - 100) {
+                    div.classList.add("visible");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        window.addEventListener("load", revealOnScroll);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="Place" content="width=device-width, initial-scale=1.0"/>
+  <title>Layout Demo</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      font-family: "Microsoft JhengHei", sans-serif;
+      background: #fff;
+    }
+
+    /* =========================
+       上方：滿版圖片區
+    ========================= */
+    .hero {
+      width: 100%;
+      height: 70vh;
+      background-image: url("./image/17747Guandu_Nature_Reserve\,_Taipei_City+ID2411215+003+DSC_4099.jpg"); /* 換成你的圖片 */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-title {
+      font-size: 56px;
+      font-weight: 900;
+      letter-spacing: 6px;
+      color: #ededed;
+      text-shadow:
+        2px 2px 0 rgba(255,255,255,0.15),
+        4px 4px 0 rgba(0,0,0,0.35);
+    }
+
+    /* =========================
+       白色文字區
+    ========================= */
+    .bottom {
+      width: 100%;
+      height: 30vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bottom-text {
+      font-size: 25px;
+      text-align: center;
+      max-width: 1000px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #393939;
+
+    }
+
+    /* =========================
+       中間分隔線
+    ========================= */
+    .section-divider {
+      width: 100%;
+      height: 4px;
+      background: #585656;
+      margin: 60px 0;
+    }
+
+    /* =========================
+       下方三個圖片區塊
+    ========================= */
+    .three-cards {
+      width: 100%;
+      padding: 40px 80px 80px;
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .card {
+      flex: 1;
+      text-align: center;
+    }
+
+    /* 圖片區（之後換成圖片） */
+    .card-img {
+      width: 100%;
+      height: 300px;
+    }
+
+    .card-text {
+      margin-top: 18px;
+      font-size: 28px;
+      font-weight: 900;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 上方圖片區 -->
+  <section class="hero">
+    <div class="hero-title">關渡自然公園</div>
+  </section>
+
+  <!-- 白色區 -->
+  <section class="bottom">
+    <div class="bottom-text">「關渡自然公園」位處淡水河及基隆河的交會口，自古以來，即是重要的候鳥棲地。
+        然而滄海桑田的變換、經濟巨輪的干擾，濕地生物的棲息環境遭到嚴重破壞，故自民國70年起，就有保育人士
+        要求政府成立保護區，保護這裡豐富的生態。</div>
+  </section>
+
+  
+
+  <!-- 分隔線 -->
+  <div class="section-divider"></div>
+
+  <!-- 三個圖片區 -->
+  <section class="three-cards">
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('./image/20170716關渡自然公園\ \(29\).jpg');"></div>
+    <div class="card-text">維持臺灣重要濕地生物多樣性之生態環境</div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('./image/IMG_4152.jpg');"></div>
+    <div class="card-text">推廣濕地價值之環境教育中心</div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('./image/保育核心區20170104關渡自然公園\ \(1\).jpg');"></div>
+    <div class="card-text">推動濕地明智利用之示範場域</div>
+  </div>
+
+</section>
+
+</body>
+</html>

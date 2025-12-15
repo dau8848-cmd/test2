@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Galliformes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            background: url('./image/A_back.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* ===========================
+           ⭐ 每一組（wrapper）樣式
+        ============================ */
+        .wrapper {
+            max-width: 1200px;
+            margin: 60px auto;
+            display: flex;
+            gap: 32px;
+            padding: 0 16px;
+            border-bottom: 10px solid rgba(255, 255, 255, 0.3); /* 分隔線 */
+            padding-bottom: 40px;
+        }
+
+        /* 最後一組不要分隔線 */
+        .wrapper:last-of-type {
+            border-bottom: none;
+        }
+
+        .left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .image-box {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+            transition: transform 0.3s ease;
+        }
+
+        .image-box:hover {
+            transform: scale(1.1);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .audio-box {
+            padding: 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: #a2a0a0;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        .right {
+            flex: 1;
+            padding: 24px;
+            font-size: 20px;
+            line-height: 1.7;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+        }
+
+        /* ===========================
+           ⭐ Scroll Reveal 動畫樣式
+        ============================ */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- ⭐ 第一組 -->
+    <div class="wrapper reveal">
+        <div class="left">
+            <div class="image-box">
+                <img src="./image/A1.png">
+            </div>
+
+            <div class="audio-box">
+                <div class="audio-label">帝雉聲音</div>
+                <audio controls>
+                    <source src="./mp3/A1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>台灣帝雉</h2>
+            <p>台灣帝雉（Lophura swinhoii），又稱帝雉或台灣藍孔雀，是台灣特有且國家保育類的鳥類，被列為台灣的國鳥。它們主要分布在台灣中海拔山區的闊葉林和混合林中，尤其以南投、花蓮、台東及阿里山等地較常見。雄鳥羽色鮮豔，頭部有亮藍色金屬光澤，尾羽長而呈深藍色，胸部與腹部呈深紫紅色；雌鳥則羽色較樸素，多為褐色，利於隱蔽，這種明顯的性二型性是牠們的重要特徵。
+
+台灣帝雉主要以地面生活為主，喜愛在林下覓食。牠們的食物以植物果實、種子、嫩葉及昆蟲為主，有時也會捕食小型無脊椎動物。繁殖季節一般在春末至初夏，雄鳥會在地面或低灌木上展示求偶舞蹈，以吸引雌鳥；雌鳥負責築巢及孵蛋，每窩通常產下3至6枚蛋，孵化期約為24至28天。雛鳥孵出後，由雌鳥帶領覓食，並學習躲避天敵。
+
+由於棲地破壞、非法捕捉及獵捕，台灣帝雉數量曾一度下降。台灣政府已將其列為「保育類野生動物」，並在多個國家公園及保護區內進行棲地保護與監測。此外，人工繁殖與復育計畫也有助於維持族群穩定。台灣帝雉不僅是生態系的重要成員，也是台灣自然象徵，因其華麗的羽色和獨特的生態習性，深受鳥類觀察者與自然愛好者喜愛。</p>
+        </div>
+    </div>
+
+
+    <!-- ⭐ 第二組 -->
+    <div class="wrapper reveal">
+        <div class="left">
+            <div class="image-box">
+                <img src="./image/A2.png">
+            </div>
+
+            <div class="audio-box">
+                <div class="audio-label">藍腹鷴聲音</div>
+                <audio controls>
+                    <source src="./mp3/A2.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>藍腹鷴</h2>
+            <p>藍腹鷴（Lophura swinhoii）是台灣特有、極具代表性的山鳥，也是台灣中高海拔森林中最具象徵性的保育鳥類之一。牠們主要棲息於海拔約 1,000 至 2,500 公尺的闊葉林與混合林，是典型的地面性鳥類，常在林下落葉層中覓食。雄鳥體色鮮豔、具有深藍與金屬光澤，是牠們最顯著的特徵；雌鳥羽色則偏褐、較為隱蔽，有利於保護自己與巢中的幼雛。
+
+藍腹鷴的食性屬雜食性，包括植物的果實、種子、嫩芽，也會食用昆蟲、蝸牛及其他小型無脊椎動物。牠們在早晨與黃昏特別活躍，常能看到牠們成對或小群覓食，但遇到干擾時會迅速奔逃或躲入林間灌木。
+
+繁殖季主要落在每年春季至初夏。雄鳥在繁殖期會展現誇張求偶行為，例如抬尾、張翅展示鮮色羽毛，以吸引雌鳥注意。巢多築於地面隱蔽處，每窩約 3 至 6 枚卵，由雌鳥負責孵育，孵化期約 24 至 28 天。雛鳥屬早成鳥型，孵出後不久即可跟隨母鳥覓食。
+
+藍腹鷴過去因棲地破壞、獵捕與人為干擾而面臨族群壓力，但透過保育政策、保護區設立及研究監測，其族群近年已有恢復跡象。由於具高生態價值與象徵力量，藍腹鷴也常被視為台灣山林精神的代表鳥種之一。</p>
+        </div>
+    </div>
+
+
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+
+            reveals.forEach(div => {
+                const top = div.getBoundingClientRect().top;
+
+                if (top < windowHeight - 100) {
+                    div.classList.add("visible");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        window.addEventListener("load", revealOnScroll);
+    </script>
+
+</body>
+</html>

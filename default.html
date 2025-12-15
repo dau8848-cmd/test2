@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>Full Page Panels</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      background-color: #000;
+      scroll-behavior: smooth;
+    }
+
+    /* 每一個滿版區塊 */
+    .panel {
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      overflow: hidden;
+    }
+    .panel-inner {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* ⭐ 文字區塊（可左右切換） */
+    .text-box {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 500px;
+      padding: 20px 28px;
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 12px;
+      color: #fff;
+      transition: transform 0.3s ease;
+    }
+
+    /* 滑鼠 hover 放大 */
+    .text-box:hover {
+      transform: translateY(-50%) scale(1.06);
+    }
+
+    /* 左右切換文字位置 */
+    .right { right: 5%; }
+    .left { left: 5%; }
+
+    .title {
+      font-size: 58px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(0,0,0,0.6);
+    }
+
+    .content {
+      font-size: 20px;
+      line-height: 1.8;
+      text-shadow: 0 0 8px rgba(0,0,0,0.6);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ⭐ Panel 1（文字右側） -->
+  <div class="panel">
+    <div class="panel-inner" style="background-image: url('./image/台灣藍鵲_v1.jpg');"></div>
+
+    <div class="text-box right">
+      <div class="title">網站宗旨介紹</div>
+      <div class="content">
+       本網站致力於打造一個專業且友善的鳥類知識平台，無論你是剛踏入觀鳥世界的新手，或是熱愛自然生態的資深玩家，都能在這裡找到豐富且可靠的資訊。我們希望透過清晰的分類、詳盡的內容與高品質的圖片，讓更多人了解鳥類的多樣性與魅力。
+      </div>
+    </div>
+  </div>
+
+  <!-- ⭐ Panel 2（文字左側） -->
+  <div class="panel">
+    <div class="panel-inner" style="background-image: url('./image/Pheasant\ \(1\).jpg');"></div>
+
+    <div class="text-box left">
+      <div class="title">內容特色與功能</div>
+      <div class="content">
+        站內收錄各類鳥種的外觀特徵、習性、棲地、分布與相關生態知識，並配合圖鑑式搜尋功能，讓你能輕鬆找到想認識的鳥類。同時，我們也提供最新的生態新聞、觀鳥技巧與旅遊推薦，讓學習與探索更直觀有趣。
+      </div>
+    </div>
+  </div>
+
+  <!-- ⭐ Panel 3（文字右側） -->
+  <div class="panel">
+    <div class="panel-inner" style="background-image: url('./image/resize.jpg');"></div>
+
+    <div class="text-box right">
+      <div class="title">願景與社群互動</div>
+      <div class="content">
+       我們相信，自然的美麗值得被更多人看見與珍惜。因此，本網站也鼓勵使用者投稿觀察紀錄、分享照片，與其他鳥友交流心得，共同建構一個活躍且有溫度的生態社群。期待透過你的參與，一起守護這片天空下的羽翼生命。
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

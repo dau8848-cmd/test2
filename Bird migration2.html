@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="Bird migration2" content="width=device-width, initial-scale=1.0"/>
+  <title>圖片＋標題內文版型</title>
+
+  <style>
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      font-family: "Microsoft JhengHei", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      background:#f0eaea;
+      color:#111;
+    }
+
+    /* 整頁中間內容寬度 */
+    .wrap{
+      width: 1500px;
+      margin: 0 auto;
+      padding: 28px 100px 100px;
+    }
+
+    /* ===== 單一區塊 ===== */
+    .block{
+      margin-bottom: 60px;
+    }
+
+    /* 上方圖片框（放圖片） */
+    .photo-box{
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 1px solid #d9d9d9;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* 文字區塊 */
+    .text-area{
+      margin-top: 26px;
+    }
+
+    .text-area h1{
+      font-size: 44px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color:#5d5077;
+    }
+
+    .text-area p{
+      font-size: 22px;
+      line-height: 1.8;
+      color:#222;
+    }
+
+    /* ===== 分隔線 ===== */
+    .divider{
+      width: 100%;
+      height: 3px;
+      background: #cfcfcf;
+      margin: 80px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <!-- ===== 區塊 1 ===== -->
+    <section class="block">
+      <div class="photo-box" style="background-image:url('./image/圖1.jpg');"></div>
+      <div class="text-area">
+        <h1>鳥類的遷徙是怎麼回事？</h1>
+        <p>候鳥就是會進行「遷徙」的鳥類。
+所謂遷徙，是指鳥類在固定、規律的時間，從一個地區飛到另一個地區生活。要注意「規律」這一點，因為不是所有移動行為都算遷徙。
+例如，臺灣有些住在中海拔的留鳥，冬天偶爾會往低海拔或海邊活動，這種人數少、時間不固定的移動，稱為「降遷」或「漂泊」，不算遷徙。
+同樣地，有些中國大陸的留鳥，每年冬天偶爾飛到馬祖或金門短暫停留，但數量少、時間不一定，也不屬於遷徙，只能算是季節性的族群擴散。）</p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ===== 區塊 2 ===== -->
+    <section class="block">
+      <div class="photo-box" style="background-image:url('./image/圖2.jpg');"></div>
+      <div class="text-area">
+        <h1> 遷徙的能源是什麼？</h1>
+        <p>脂肪是候鳥遷徙最重要的能量來源。研究發現，許多濕地鳥在遷徙前體重會大幅增加，甚至變成平時的一倍。牠們在灘地拼命覓食，就是在儲存飛往下一站所需的能量。別小看增加的幾十公克脂肪，這足以讓牠們在不降落的情況下，連續飛行好幾天。因此，遷徙路線上的濕地是否有充足食物，非常關鍵。任何濕地被開發或破壞，都可能讓候鳥無法補充能量，進而導致族群數量下降，甚至滅絕。例如黑面琵鷺、琵嘴鷸，以及東亞—澳洲遷徙線上的許多濕地鳥，都高度依賴這些重要的濕地中繼站。</p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ===== 區塊 3 ===== -->
+    <section class="block">
+      <div class="photo-box" style="background-image:url('./image/圖3.jpg');"></div>
+      <div class="text-area">
+        <h1>遷徒時，鳥類定位方向的依據是什麼？</h1>
+        <p>人類長期研究候鳥遷徙，發現牠們會利用多種天然導航線索，例如太陽、星星、地標、地磁，以及海鳥使用的海水鹽度等，這些能力都是天生、寫在基因裡的。其中，利用地磁判斷方向的「磁羅盤」研究最多，也已獲得多數科學家的支持。基因對遷徙行為的影響非常驚人。以臺灣的夏候鳥杜鵑為例，牠們是寄生性鳥類，親鳥把蛋產在別的鳥巢後就離開，由寄主負責孵蛋和養育。神奇的是，這些杜鵑幼鳥長大後，即使從未見過親鳥，仍能完整繼承族群的行為，包括獨自飛越海洋，前往印尼或澳洲過冬。</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

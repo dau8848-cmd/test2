@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layout Demo</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    /* 整頁背景 */
+    body{
+      font-family: "Microsoft JhengHei", sans-serif;
+      background-image: url("./image/cavan.png"); /* 背景圖 */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    /* ===== 區塊共用樣式 ===== */
+    .stage{
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 80px 100px;
+      gap: 80px;
+
+      /* ✅ UX：進場淡入 */
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    /* ✅ UX：每段出現時間錯開（section 是 stage，所以用 nth-of-type） */
+    .stage:nth-of-type(1){ animation-delay: 0.10s; }
+    .stage:nth-of-type(2){ animation-delay: 0.25s; }
+    .stage:nth-of-type(3){ animation-delay: 0.40s; }
+    .stage:nth-of-type(4){ animation-delay: 0.55s; }
+
+    /* 圖文左右交換 */
+    .stage.reverse{
+      flex-direction: row-reverse;
+    }
+
+    /* 文字區 */
+    .text{
+      flex: 0 0 700px;
+      color: #ffffff;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      padding-top: 20px;
+    }
+
+    .text h1{
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .text p{
+      font-size: 24px;
+      line-height: 1.6;
+
+      /* ✅ UX：閱讀舒適度微調 */
+      letter-spacing: 0.5px;
+    }
+
+    /* 圖片區 */
+    .image{
+      flex: 1;
+      max-width: 760px;
+      aspect-ratio: 16 / 10;
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      /* ✅ UX：hover 浮起 + 放大（不裁切） */
+      transition: transform 0.6s ease, box-shadow 0.6s ease, filter 0.6s ease;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .image:hover{
+      transform: scale(1.06);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+      filter: contrast(1.05) saturate(1.05);
+    }
+
+    /* ===== 分隔線 ===== */
+    .divider{
+      width: 100%;
+      height: 2px;
+      background: rgba(151, 150, 226, 0.5);
+      margin: 0 auto;
+
+      /* ✅ UX：分隔線也有一點互動感 */
+      transition: opacity 0.3s ease;
+    }
+
+    /* ✅ UX：滑到某段時，下一條分隔線變淡（微互動） */
+    .stage:hover + .divider{
+      opacity: 0.3;
+    }
+
+    /* ✅ UX：淡入動畫 */
+    @keyframes fadeUp{
+      to{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== RWD ===== */
+    @media (max-width: 1000px){
+      .stage,
+      .stage.reverse{
+        flex-direction: column;
+        padding: 60px 24px;
+      }
+
+      .text{
+        flex: none;
+        width: 100%;
+      }
+
+      .image{
+        max-width: 100%;
+        aspect-ratio: 16 / 12;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== 第 1 塊（圖片在右） ===== -->
+  <section class="stage">
+    <div class="text">
+      <h1>設備名稱：雙筒望遠鏡</h1>
+      <p>
+        本款雙筒望遠鏡專為近距離觀察鳥類及自然生態所設計，具備清晰的成像效果與良好的操作穩定性。採用 8x42 規格，在放大倍率與鏡頭口徑之間取得理想平衡，不僅能提供充足的進光量，在晨昏或光線較弱的環境下依然保持明亮視野，同時也降低手持晃動帶來的影響。整體設計兼顧實用性與舒適度，無論是初次接觸賞鳥活動的新手，或是對畫質與穩定度有一定要求的進階使用者，皆能輕鬆上手並獲得良好的觀察體驗。
+      </p>
+    </div>
+    <div class="image" style="background-image:url('./image/telescope.png');"></div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== 第 2 塊（圖片在左） ===== -->
+  <section class="stage reverse">
+    <div class="text">
+      <h1>鳥類圖鑑或 App</h1>
+      <p>
+        可協助使用者辨識所觀察到的鳥類種類，並建議選擇涵蓋您所在地區常見與代表性鳥種的版本，以提升辨識準確度與使用實用性。透過完整且在地化的鳥種收錄，無論是日常賞鳥、野外調查或生態學習，都能更快速對照特徵、確認鳥種，讓觀察過程更加有效且富有樂趣。
+      </p>
+    </div>
+    <div class="image" style="background-image:url('./image/bird book.png');"></div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== 第 3 塊（圖片在右） ===== -->
+  <section class="stage">
+    <div class="text">
+      <h1>單筒望遠鏡 (Spotting Scope)</h1>
+      <p>
+        適合用於觀賞極遠距離或水域環境上的鳥類，能有效提升細節辨識能力。由於高倍率觀察對穩定度要求較高，建議搭配三腳架使用，以減少晃動、確保畫面清晰穩定，特別適合進行長時間觀察、族群記錄或專業鳥類調查。
+      </p>
+    </div>
+    <div class="image" style="background-image:url('./image/monocular.png');"></div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== 第 4 塊（圖片在左） ===== -->
+  <section class="stage reverse">
+    <div class="text">
+      <h1>服裝建議</h1>
+      <p>
+        進行觀察時，請穿著接近自然環境的樸素色系服裝，例如大地色、綠色或灰色等，以降低存在感並融入周遭景觀；應避免穿著鮮豔或高對比的衣物，以免引起鳥類警覺或造成驚擾，影響其自然行為與觀察效果。
+      </p>
+    </div>
+    <div class="image" style="background-image:url('./image/clothing-01.png');"></div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Passeriformes2</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            background: url('./image/C_back2.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* ===========================
+           ⭐ 每一組（wrapper）樣式
+        ============================ */
+        .wrapper {
+            max-width: 1200px;
+            margin: 60px auto;
+            display: flex;
+            gap: 32px;
+            padding: 0 16px;
+            border-bottom: 10px solid rgba(255, 255, 255, 0.3); /* 分隔線 */
+            padding-bottom: 40px;
+        }
+
+        /* 最後一組不要分隔線 */
+        .wrapper:last-of-type {
+            border-bottom: none;
+        }
+
+        .left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .image-box {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+            transition: transform 0.3s ease;
+        }
+
+        .image-box:hover {
+            transform: scale(1.1);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .audio-box {
+            padding: 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: #161328;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        .right {
+            flex: 1;
+            padding: 24px;
+            font-size: 20px;
+            line-height: 1.7;
+            color: #1b2010;
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+        }
+
+        /* ===========================
+           ⭐ Scroll Reveal 動畫樣式
+        ============================ */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="wrapper reveal">
+        <div class="left">
+            <div class="image-box">
+                <img src="./image/C2.png">
+            </div>
+
+            <div class="audio-box">
+                <div class="audio-label">台灣紫嘯鶇叫聲</div>
+                <audio controls>
+                    <source src="./mp3/C2.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>台灣紫嘯鶇
+</h2>
+            <p>台灣紫嘯鶇（Myophonus insularis）是台灣特有種鳥類，也是台灣山區及中低海拔森林常見的亮眼鳥種之一。牠們主要分布於海拔 200～2,000 公尺的山區溪流、峽谷以及潮濕的森林環境，尤其偏好靠近水邊的岩壁、溪谷與林道。由於活動範圍廣、適應力好，登山者或山區居民時常能在山路旁看見牠們的身影。
+
+紫嘯鶇體型中等，約 30 公分，以深藍紫色的亮麗羽毛著稱。牠們的羽色在陽光下會呈現藍紫色金屬光澤，十分吸引人。全身羽毛除腹部的細碎白色鱗斑外，多為純淨的藍紫色；嘴喙與腳呈黑色，雄雌鳥外觀相似，但雄鳥色澤較深、光澤更明顯。牠們具有強而響亮的叫聲，是其名稱中「嘯」的由來，叫聲清脆、多變，常被形容像金屬般的叮叮聲或哨音，是山林中的獨特背景音。
+
+繁殖季大多在每年春夏。紫嘯鶇偏好在岩壁凹槽、溪谷縫隙或橋梁下築巢，巢多由苔蘚、樹根與枯葉組成，結構濕潤且堅固。每窩通常產 2～4 枚卵，由雙親共同育雛。雛鳥剛孵出時相當脆弱，但成長快速，離巢後仍會依賴親鳥一段時間學習覓食技巧。</p>
+        </div>
+    </div>
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+
+            reveals.forEach(div => {
+                const top = div.getBoundingClientRect().top;
+
+                if (top < windowHeight - 100) {
+                    div.classList.add("visible");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        window.addEventListener("load", revealOnScroll);
+    </script>
+
+</body>
+</html>

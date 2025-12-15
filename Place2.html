@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="Place2" content="width=device-width, initial-scale=1.0"/>
+  <title>Layout Demo</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      font-family: "Microsoft JhengHei", sans-serif;
+      background: #fff;
+    }
+
+    /* =========================
+       上方：滿版圖片區
+    ========================= */
+    .hero {
+      width: 100%;
+      height: 70vh;
+      background-image: url("./image/04_BASE_04.jpg"); /* 換成你的圖片 */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-title {
+      font-size: 56px;
+      font-weight: 900;
+      letter-spacing: 6px;
+      color: #ededed;
+      text-shadow:
+        2px 2px 0 rgba(255,255,255,0.15),
+        4px 4px 0 rgba(0,0,0,0.35);
+    }
+
+    /* =========================
+       白色文字區
+    ========================= */
+    .bottom {
+      width: 100%;
+      height: 30vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bottom-text {
+      font-size: 25px;
+      text-align: center;
+      max-width: 1000px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #393939;
+
+    }
+
+    /* =========================
+       中間分隔線
+    ========================= */
+    .section-divider {
+      width: 100%;
+      height: 4px;
+      background: #585656;
+      margin: 60px 0;
+    }
+
+    /* =========================
+       下方三個圖片區塊
+    ========================= */
+    .three-cards {
+      width: 100%;
+      padding: 40px 80px 80px;
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .card {
+      flex: 1;
+      text-align: center;
+    }
+
+    /* 圖片區（之後換成圖片） */
+    .card-img {
+      width: 100%;
+      height: 300px;
+    }
+
+    .card-text {
+      margin-top: 18px;
+      font-size: 28px;
+      font-weight: 900;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 上方圖片區 -->
+  <section class="hero">
+    <div class="hero-title">大雪山國家森林遊樂區</div>
+  </section>
+
+  <!-- 白色區 -->
+  <section class="bottom">
+    <div class="bottom-text">曾是民國47年開採的大雪山林場，繁榮了東勢與豐原，如今這個距離東勢只消1小時的山城成為了森林遊樂區，為中部的人們帶來屬於自然的恩惠。海拔超過2000公尺，目前僅存小神木步道與木馬道一帶保有原始的扁柏巨木林，是遊樂區最美的景色之一；而位於遊樂區最深處，高50公尺的雪山神木則曾是台灣第11大巨木呢！</div>
+  </section>
+
+  
+
+  <!-- 分隔線 -->
+  <div class="section-divider"></div>
+
+  <!-- 三個圖片區 -->
+  <section class="three-cards">
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('./image/小雪山步道_Mt_Little_Snow_Trail_-_panoramio.jpg');"></div>
+    <div class="card-text">小雪山步道</div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('./image/Daxueshan_Forest_Road_大雪山林道_-_panoramio.jpg');"></div>
+    <div class="card-text">大雪山林道</div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('./image/05_大雪山_雪山神木步道.jpg');"></div>
+    <div class="card-text">大雪山_雪山神木步道
+</div>
+  </div>
+
+</section>
+
+</body>
+</html>
